@@ -1,0 +1,31 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v2
+
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.9'
+
+    - name: Install dependencies
+      run: |
+        pip install poetry
+        poetry config virtualenvs.create true
+        poetry install --only linting,testing,dev
+
+    - name: Execute linting
+      run: |
+        poetry run isort . --check-only
+        poetry run black .
+        poetry run ruff .
+
+    - name: Execute type checking
+      run: |
+        poetry run mypy src
