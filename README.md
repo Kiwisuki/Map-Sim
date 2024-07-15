@@ -9,6 +9,10 @@
 
 Simple simulation of a grid with people and a virus spreading. The simulation is similar to the [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) but with a virus spreading.
 
+## Generated Visual
+
+![Demo](output/output.gif)
+
 ## Tools Used in This Project
 
 * [poetry](https://github.com/python-poetry/poetry): Python packaging and dependency management.
