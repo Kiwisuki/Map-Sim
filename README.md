@@ -11,7 +11,7 @@ Simple simulation of a grid with people and a virus spreading. The simulation is
 
 ## Generated Visual
 
-![Demo](output/output.gif)
+<img src="output/output.gif" alt="Demo" width="600"/>
 
 ## Tools Used in This Project
 
